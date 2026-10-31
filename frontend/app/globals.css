@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 250 250 240;
+    --foreground: 45 52 54;
+  }
+  body {
+    @apply bg-ivory text-charcoal antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .card {
+    @apply bg-white rounded-xl border border-charcoal-light/20 shadow-sm p-6;
+  }
+  .btn-primary {
+    @apply bg-forest text-white px-6 py-3 rounded-lg font-medium hover:bg-forest-dark transition-colors focus:outline-none focus:ring-2 focus:ring-forest focus:ring-offset-2;
+  }
+  .btn-emerald {
+    @apply bg-emerald text-white px-6 py-3 rounded-lg font-medium hover:brightness-110 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald focus:ring-offset-2;
+  }
+  .btn-outline {
+    @apply border border-charcoal-light text-charcoal px-6 py-3 rounded-lg font-medium hover:bg-charcoal-light/10 transition-colors focus:outline-none focus:ring-2 focus:ring-charcoal focus:ring-offset-2;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border;
+  }
+  .badge-forest {
+    @apply border-forest/20 bg-forest/5 text-forest;
+  }
+  .badge-emerald {
+    @apply border-emerald/20 bg-emerald/5 text-emerald;
+  }
+  .badge-charcoal {
+    @apply border-charcoal-light/20 bg-charcoal-light/10 text-charcoal;
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "pay-the-wells-you-drank-from",
+  "version": "1.0.0",
+  "description": "Quadratic/dependency-based retroactive funding protocol for Devcon 8",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:contracts": "forge build",
+    "test:contracts": "forge test",
+    "test:contracts:verbose": "forge test -vvv",
+    "fmt": "forge fmt",
+    "fmt:check": "forge fmt --check",
+    "verify": "ts-node scripts/ts/verify.ts",
+    "verify:sample": "ts-node scripts/ts/verify.ts",
+    "secret-scan": "bash scripts/secret-scan.sh",
+    "lint:frontend": "cd frontend && npm run lint",
+    "typecheck:frontend": "cd frontend && npm run typecheck",
+    "build:frontend": "cd frontend && npm run build",
+    "dev:frontend": "cd frontend && npm run dev"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

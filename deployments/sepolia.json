@@ -1,0 +1,23 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "deployedAt": null,
+  "deployer": null,
+  "contracts": {
+    "DependencyGraph": null,
+    "Jury": null,
+    "WeightingEngine": null,
+    "DistributionEngine": null,
+    "MerkleDistributor": null,
+    "RetroFunding": null
+  },
+  "roles": {
+    "JUROR_ADMIN": null,
+    "PROPOSER": null,
+    "DISPUTE_RESOLVER": null
+  },
+  "transactions": {},
+  "verification": {
+    "note": "Run `forge verify-contract` for each contract on Etherscan after deployment"
+  }
+}

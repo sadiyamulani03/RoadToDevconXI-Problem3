@@ -1,0 +1,41 @@
+{
+  "distributionId": "0xdevcon8-retro-funding-001",
+  "name": "Devcon 8 Event App Retroactive Funding",
+  "pot": "100000000000000000000",
+  "rootIndex": 0,
+  "description": "Sample dependency graph for the Devcon 8 Event App. Demonstrates multiple levels, shared dependencies, and a directed cycle (Wallet Connection Wrapper <-> Ethereum Provider).",
+  "packages": [
+    { "address": "0x101", "packageId": "0x0000000000000000000000000000000000000000000000000000000000000101", "retentionRate": "500000000000000000", "metadata": "ipfs://QmDevconEventApp", "level": 0 },
+    { "address": "0x102", "packageId": "0x0000000000000000000000000000000000000000000000000000000000000102", "retentionRate": "500000000000000000", "metadata": "ipfs://QmQRTicketing", "level": 1 },
+    { "address": "0x103", "packageId": "0x0000000000000000000000000000000000000000000000000000000000000103", "retentionRate": "500000000000000000", "metadata": "ipfs://QmHindiI18n", "level": 1 },
+    { "address": "0x104", "packageId": "0x0000000000000000000000000000000000000000000000000000000000000104", "retentionRate": "500000000000000000", "metadata": "ipfs://QmWalletConnection", "level": 1 },
+    { "address": "0x105", "packageId": "0x0000000000000000000000000000000000000000000000000000000000000105", "retentionRate": "500000000000000000", "metadata": "ipfs://QmCryptoUtility", "level": 2 },
+    { "address": "0x106", "packageId": "0x0000000000000000000000000000000000000000000000000000000000000106", "retentionRate": "500000000000000000", "metadata": "ipfs://QmEncodingLibrary", "level": 2 },
+    { "address": "0x107", "packageId": "0x0000000000000000000000000000000000000000000000000000000000000107", "retentionRate": "500000000000000000", "metadata": "ipfs://QmTranslationUtility", "level": 2 },
+    { "address": "0x108", "packageId": "0x0000000000000000000000000000000000000000000000000000000000000108", "retentionRate": "500000000000000000", "metadata": "ipfs://QmEthereumProvider", "level": 2 },
+    { "address": "0x109", "packageId": "0x0000000000000000000000000000000000000000000000000000000000000109", "retentionRate": "1000000000000000000", "metadata": "ipfs://QmSharedLogging", "level": 3 },
+    { "address": "0x10a", "packageId": "0x000000000000000000000000000000000000000000000000000000000000010a", "retentionRate": "1000000000000000000", "metadata": "ipfs://QmRPCUtility", "level": 3 }
+  ],
+  "edges": [
+    { "from": "0x101", "to": "0x102" },
+    { "from": "0x101", "to": "0x103" },
+    { "from": "0x101", "to": "0x104" },
+    { "from": "0x102", "to": "0x105" },
+    { "from": "0x102", "to": "0x106" },
+    { "from": "0x103", "to": "0x107" },
+    { "from": "0x104", "to": "0x108" },
+    { "from": "0x104", "to": "0x10a" },
+    { "from": "0x105", "to": "0x109" },
+    { "from": "0x106", "to": "0x109" },
+    { "from": "0x107", "to": "0x109" },
+    { "from": "0x108", "to": "0x104" },
+    { "from": "0x108", "to": "0x10a" }
+  ],
+  "cycles": [
+    { "description": "Wallet Connection Wrapper <-> Ethereum Provider", "packages": ["0x104", "0x108"] }
+  ],
+  "sharedDependencies": [
+    { "dependency": "0x109", "dependents": ["0x105", "0x106", "0x107"] },
+    { "dependency": "0x10a", "dependents": ["0x104", "0x108"] }
+  ]
+}

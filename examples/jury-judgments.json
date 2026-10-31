@@ -1,0 +1,24 @@
+{
+  "distributionId": "0xdevcon8-retro-funding-001",
+  "description": "Pairwise jury judgments for the Devcon 8 Event App dependency graph. Each juror evaluates which package contributed more.",
+  "jurors": [
+    { "address": "0x11", "name": "Juror Alpha" },
+    { "address": "0x12", "name": "Juror Beta" },
+    { "address": "0x13", "name": "Juror Gamma" }
+  ],
+  "judgments": [
+    { "juror": "0x11", "packageA": "0x102", "packageB": "0x103", "winner": 0, "reason": "QR Ticketing is user-facing and critical for Devcon attendance" },
+    { "juror": "0x11", "packageA": "0x102", "packageB": "0x104", "winner": 0, "reason": "Ticketing has broader impact than wallet connection" },
+    { "juror": "0x11", "packageA": "0x103", "packageB": "0x104", "winner": 1, "reason": "Wallet connection enables transactions; i18n is secondary" },
+    { "juror": "0x11", "packageA": "0x105", "packageB": "0x106", "winner": 0, "reason": "Cryptographic utility underpins security of all packages" },
+    { "juror": "0x11", "packageA": "0x107", "packageB": "0x108", "winner": 1, "reason": "Ethereum provider is essential for on-chain interaction" },
+    { "juror": "0x12", "packageA": "0x102", "packageB": "0x103", "winner": 0, "reason": "Ticketing drives revenue directly" },
+    { "juror": "0x12", "packageA": "0x104", "packageB": "0x103", "winner": 0, "reason": "Wallet connection is a prerequisite for ticket purchase" },
+    { "juror": "0x12", "packageA": "0x105", "packageB": "0x107", "winner": 0, "reason": "Crypto is foundational; translation is optional" },
+    { "juror": "0x12", "packageA": "0x106", "packageB": "0x108", "winner": 0, "reason": "Encoding is used everywhere; provider is context-specific" },
+    { "juror": "0x13", "packageA": "0x102", "packageB": "0x104", "winner": 1, "reason": "Without wallet connection, users cannot buy tickets" },
+    { "juror": "0x13", "packageA": "0x103", "packageB": "0x107", "winner": 1, "reason": "Translation utility powers the i18n package" },
+    { "juror": "0x13", "packageA": "0x105", "packageB": "0x108", "winner": 0, "reason": "Cryptographic utility secures the provider itself" },
+    { "juror": "0x13", "packageA": "0x109", "packageB": "0x10a", "winner": 2, "reason": "Both are infrastructure leaves with equal importance" }
+  ]
+}
